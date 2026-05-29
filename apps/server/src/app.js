@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
+import Routes from "./routes/index.js";
 
 const app = express();
 
@@ -16,5 +17,7 @@ app.get("/", (req, res) => {
     message: "API running",
   });
 });
+
+app.use("/api/v1", Routes);
 
 export default app;
